@@ -26,3 +26,5 @@ git clone https://aur.archlinux.org/paru.git "$workdir/paru"
 cd "$workdir/paru"
 
 mise exec rust@nightly -- makepkg -dsi --noconfirm
+
+paru -S --noconfirm zen-twilight-bin
