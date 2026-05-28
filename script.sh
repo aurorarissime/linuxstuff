@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# curl https://raw.githubusercontent.com/aurorarissime/linuxstuff/refs/heads/main/script.sh | sh
+
 set -euo pipefail
 
 if [[ $EUID -eq 0 ]]; then
