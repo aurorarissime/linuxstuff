@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# curl https://raw.githubusercontent.com/aurorarissime/linuxstuff/refs/heads/main/script.sh | sh
+# curl -fsSL https://raw.githubusercontent.com/aurorarissime/linuxstuff/main/script.sh | bash
 # Installs Paru, BlackArch, Zen Twilight, Equibop, Quickshell, and Rust Nightly using Mise.
 
 set -euo pipefail
@@ -16,7 +16,7 @@ command -v sudo >/dev/null 2>&1 || {
 }
 
 echo "--- Starting BlackArch installation via strap.sh ---"
-curl -O https://blackarch.org/strap.sh
+curl -fsSLO https://blackarch.org/strap.sh
 # Verify the SHA1 sum (00688950aaf5e5804d2abebb8d3d3ea1d28525ed)
 echo 00688950aaf5e5804d2abebb8d3d3ea1d28525ed strap.sh | sha1sum -c
 chmod +x strap.sh
