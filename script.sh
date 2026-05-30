@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # curl https://raw.githubusercontent.com/aurorarissime/linuxstuff/refs/heads/main/script.sh | sh
+# Installs Paru, BlackArch, Zen Twilight, Equibop, Quickshell, and Rust Nightly using Mise.
 
 set -euo pipefail
 
@@ -26,7 +27,7 @@ rm strap.sh
 echo "--- Enabling multilib repository (Manual step required) ---"
 echo "# Please manually edit /etc/pacman.conf to enable the [multilib] repository as per Arch Wiki."
 # After enabling multilib, run: sudo pacman -Syu
-sudo pacman -Syu --needed --noconfirm base-devel git mise  # Re-run system update after potential repo changes
+sudo pacman -Sy --needed --noconfirm base-devel git mise  # Re-run system update after potential repo changes
 
 echo "--- BlackArch installation steps completed ---"
 
@@ -40,4 +41,8 @@ cd "$workdir/paru"
 
 mise exec rust@nightly -- makepkg -dsi --noconfirm
 
-paru -S --noconfirm zen-twilight-bin
+paru -Sy --noconfirm --needed zen-twilight-bin
+
+paru -Sy --noconfirm --needed equibop-bin
+
+sudo pacman -Sy --noconfirm --needed quickshell
